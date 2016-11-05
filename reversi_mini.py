@@ -3,19 +3,15 @@ import sys
 
 # This function prints out the board so that it was passed. Returns None.
 def drawBoard(board):
-    HLINE = ' +---+---+---+---+---+---+---+---+'
-    VLINE = ' |   |   |   |   |   |   |   |   |'
-
-    print('   1   2   3   4   5   6   7   8')
+    HLINE = ' +--------+'
+    print('  12345678')
     print(HLINE)
     for y in range(8):
-        print(VLINE)
-        print(y+1, end='')
+        print('%s|' % (y+1), end='')
         for x in range(8):
-            print('| %s' % (board[x][y]), end=' ')
+            print(board[x][y], end='')
         print('|')
-        print(VLINE)
-        print(HLINE)
+    print(HLINE)
 
 # Blanks out the board it is passed, except for the original starting position.
 def resetBoard(board):
